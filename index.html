@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoSort - Waste Sorting Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-recycle"></i>
+                    <div>
+                        <h1>EcoSort</h1>
+                        <p>Your guide to proper waste disposal</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="active"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#guide"><i class="fas fa-bin"></i> Sorting Guide</a></li>
+                        <li><a href="#locator"><i class="fas fa-map-marker-alt"></i> Drop-off</a></li>
+                        <li><a href="#quiz"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                        <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Sort Waste. Save the Planet.</h2>
+                <p>Find the right way to dispose of any item and learn how to reduce your environmental footprint</p>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search for an item (e.g. pizza box, batteries)">
+                    <button id="search-btn"><i class="fas fa-search"></i> Search</button>
+                </div>
+                <div id="search-results"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="guide">
+        <div class="section-title">
+            <h2>Waste Categories</h2>
+            <p>Learn how to properly sort your waste into these categories</p>
+        </div>
+        <div class="category-grid">
+            <div class="category-card recycling">
+                <div class="card-content">
+                    <i class="fas fa-recycle"></i>
+                    <h3>Recycling</h3>
+                    <p>Paper, cardboard, clean containers</p>
+                    <a href="#recycling-section" class="learn-more">Learn More</a>
+                </div>
+            </div>
+            <div class="category-card compost">
+                <div class="card-content">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Compost</h3>
+                    <p>Food scraps, yard waste</p>
+                    <a href="#compost-section" class="learn-more">Learn More</a>
+                </div>
+            </div>
+            <div class="category-card landfill">
+                <div class="card-content">
+                    <i class="fas fa-trash"></i>
+                    <h3>Landfill</h3>
+                    <p>Non-recyclable, non-compostable items</p>
+                    <a href="#landfill-section" class="learn-more">Learn More</a>
+                </div>
+            </div>
+            <div class="category-card hazardous">
+                <div class="card-content">
+                    <i class="fas fa-biohazard"></i>
+                    <h3>Hazardous</h3>
+                    <p>Batteries, chemicals, electronics</p>
+                    <a href="#hazardous-section" class="learn-more">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="common-items">
+        <div class="section-title">
+            <h2>Common Waste Items</h2>
+            <p>Find disposal information for everyday items</p>
+        </div>
+        <div class="items-grid" id="items-container">
+            <!-- Items populated by JavaScript -->
+        </div>
+    </section>
+
+    <section class="container" id="quiz">
+        <div class="section-title">
+            <h2>Test Your Knowledge</h2>
+            <p>Take our quiz to see how well you know waste sorting</p>
+        </div>
+        <div class="quiz-container">
+            <div id="quiz-question"></div>
+            <div class="quiz-options" id="quiz-options"></div>
+            <div class="quiz-controls">
+                <div id="quiz-score"></div>
+                <button id="quiz-next">Next Question <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="recycling-section">
+        <div class="section-title">
+            <h2>Recycling Guide</h2>
+            <p>How to properly recycle materials</p>
+        </div>
+        <div class="category-content">
+            <div class="category-section">
+                <h3><i class="fas fa-info-circle"></i> About Recycling</h3>
+                <p>Recycling involves converting waste materials into new materials and objects. It helps reduce the consumption of fresh raw materials, energy usage, and pollution. Recycling just one ton of paper can save 17 trees and 7,000 gallons of water.</p>
+            </div>
+            <div class="category-section">
+                <h3><i class="fas fa-check-circle"></i> What to Recycle</h3>
+                <ul>
+                    <li>Paper and cardboard (newspapers, magazines, boxes)</li>
+                    <li>Metal cans (aluminum, steel, tin)</li>
+                    <li>Glass bottles and jars (all colors)</li>
+                    <li>Plastic containers (#1-7, check local guidelines)</li>
+                    <li>Clean food and beverage cartons (milk, juice)</li>
+                </ul>
+            </div>
+            <div class="category-section">
+                <h3><i class="fas fa-times-circle"></i> What Not to Recycle</h3>
+                <ul>
+                    <li>Food-contaminated items (greasy pizza boxes)</li>
+                    <li>Plastic bags and film (can tangle machinery)</li>
+                    <li>Styrofoam (not accepted in most programs)</li>
+                    <li>Broken glass (wrap and dispose in trash)</li>
+                    <li>Hazardous materials (batteries, chemicals)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="compost-section">
+        <div class="section-title">
+            <h2>Composting Guide</h2>
+            <p>Turning organic waste into nutrient-rich soil</p>
+        </div>
+        <div class="category-content">
+            <div class="category-section">
+                <h3><i class="fas fa-info-circle"></i> About Composting</h3>
+                <p>Composting is the natural process of recycling organic matter into a valuable fertilizer that can enrich soil and plants. It reduces methane emissions from landfills and creates a closed-loop system for nutrients. Home composting can divert about 30% of household waste from landfills.</p>
+            </div>
+            <div class="category-section">
+                <h3><i class="fas fa-check-circle"></i> What to Compost</h3>
+                <ul>
+                    <li>Fruit and vegetable scraps</li>
+                    <li>Coffee grounds and filters</li>
+                    <li>Eggshells (crushed decompose faster)</li>
+                    <li>Yard trimmings (grass, leaves, small branches)</li>
+                    <li>Paper towels and napkins (unbleached)</li>
+                </ul>
+            </div>
+            <div class="category-section">
+                <h3><i class="fas fa-times-circle"></i> What Not to Compost</h3>
+                <ul>
+                    <li>Meat, fish, and bones (attract pests)</li>
+                    <li>Dairy products (can create odor issues)</li>
+                    <li>Oily or greasy foods (disrupts decomposition)</li>
+                    <li>Pet waste (may contain pathogens)</li>
+                    <li>Diseased plants (can spread disease)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="landfill-section">
+        <div class="section-title">
+            <h2>Landfill Waste Guide</h2>
+            <p>Last resort for non-recyclable waste</p>
+        </div>
+        <div class="category-content">
+            <div class="category-section">
+                <h3><i class="fas fa-info-circle"></i> About Landfill Waste</h3>
+                <p>Landfill waste consists of materials that cannot be recycled or composted. Modern landfills are engineered to minimize environmental impact, but reducing landfill waste conserves resources and space. The average person generates about 4.5 pounds of landfill waste daily.</p>
+            </div>
+            <div class="category-section">
+                <h3><i class="fas fa-check-circle"></i> What Goes to Landfill</h3>
+                <ul>
+                    <li>Plastic bags and film (unless recycled separately)</li>
+                    <li>Styrofoam containers (not typically recyclable)</li>
+                    <li>Broken glass and ceramics</li>
+                    <li>Disposable diapers (unless using compostable brands)</li>
+                    <li>Mixed material items (like chip bags)</li>
+                </ul>
+            </div>
+            <div class="category-section">
+                <h3><i class="fas fa-times-circle"></i> What to Avoid in Landfill</h3>
+                <ul>
+                    <li>Anything that can be recycled</li>
+                    <li>Organic material that can be composted</li>
+                    <li>Hazardous materials (batteries, chemicals)</li>
+                    <li>Electronics (many contain recoverable materials)</li>
+                    <li>Batteries (can cause fires)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="hazardous-section">
+        <div class="section-title">
+            <h2>Hazardous Waste Guide</h2>
+            <p>Special handling for dangerous materials</p>
+        </div>
+        <div class="category-content">
+            <div class="category-section">
+                <h3><i class="fas fa-info-circle"></i> About Hazardous Waste</h3>
+                <p>Hazardous waste contains properties that make it dangerous to human health or the environment. Proper disposal prevents contamination of water supplies and soil. Many communities hold regular collection events for hazardous waste.</p>
+            </div>
+            <div class="category-section">
+                <h3><i class="fas fa-check-circle"></i> Hazardous Waste Items</h3>
+                <ul>
+                    <li>Batteries (all types - alkaline, lithium, button)</li>
+                    <li>Electronics (e-waste - computers, TVs, phones)</li>
+                    <li>Paint and chemicals (oil-based paint, pesticides)</li>
+                    <li>Light bulbs (CFLs, fluorescents contain mercury)</li>
+                    <li>Medications (prevent water contamination)</li>
+                </ul>
+            </div>
+            <div class="category-section">
+                <h3><i class="fas fa-times-circle"></i> What Not to Do</h3>
+                <ul>
+                    <li>Put in regular trash or recycling bins</li>
+                    <li>Pour down drains or toilets</li>
+                    <li>Dispose with yard waste</li>
+                    <li>Put in storm drains</li>
+                    <li>Place in regular recycling</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="locator">
+        <div class="section-title">
+            <h2>Drop-off Locations</h2>
+            <p>Find recycling and waste disposal facilities near you</p>
+        </div>
+        <div class="category-content">
+            <div class="category-section">
+                <h3><i class="fas fa-map-marker-alt"></i> Recycling Centers</h3>
+                <p>Find locations to drop off recyclables that can't go in curbside bins:</p>
+                <ul>
+                    <li>Plastic bags and film</li>
+                    <li>Electronics and e-waste</li>
+                    <li>Glass bottles and jars</li>
+                    <li>Scrap metal</li>
+                </ul>
+            </div>
+            <div class="category-section">
+                <h3><i class="fas fa-biohazard"></i> Hazardous Waste Facilities</h3>
+                <p>Special facilities for hazardous materials:</p>
+                <ul>
+                    <li>Batteries of all types</li>
+                    <li>Chemicals and solvents</li>
+                    <li>Paint and paint thinners</li>
+                    <li>Fluorescent light bulbs</li>
+                </ul>
+            </div>
+            <div class="category-section">
+                <h3><i class="fas fa-compress-alt"></i> Compost Drop-off</h3>
+                <p>Community compost collection points:</p>
+                <ul>
+                    <li>Food scraps collection bins</li>
+                    <li>Yard waste drop-off</li>
+                    <li>Community gardens</li>
+                    <li>Farmer's markets</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="about">
+        <div class="section-title">
+            <h2>About EcoSort</h2>
+            <p>Our mission to reduce waste and protect the environment</p>
+        </div>
+        <div class="category-content">
+            <div class="category-section">
+                <h3><i class="fas fa-seedling"></i> Our Mission</h3>
+                <p>EcoSort was founded to simplify waste sorting and recycling for everyone. Our mission is to reduce landfill waste and promote sustainable practices through education and accessible information.</p>
+            </div>
+            <div class="category-section">
+                <h3><i class="fas fa-users"></i> Our Team</h3>
+                <p>We're a team of environmental scientists, software developers, and sustainability advocates passionate about creating a greener future. Our expertise helps provide accurate, up-to-date waste management information.</p>
+            </div>
+            <div class="category-section">
+                <h3><i class="fas fa-chart-line"></i> Our Impact</h3>
+                <p>Since our launch, EcoSort has helped divert thousands of tons of waste from landfills. Our users report a 45% increase in proper recycling habits and a 30% reduction in household waste.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>EcoSort</h3>
+                    <p>Helping communities reduce waste and improve recycling through education and accessible information.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#guide"><i class="fas fa-bin"></i> Sorting Guide</a></li>
+                        <li><a href="#common-items"><i class="fas fa-trash"></i> Common Items</a></li>
+                        <li><a href="#quiz"><i class="fas fa-question"></i> Waste Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#recycling-section"><i class="fas fa-recycle"></i> Recycling Guide</a></li>
+                        <li><a href="#compost-section"><i class="fas fa-leaf"></i> Composting Guide</a></li>
+                        <li><a href="#locator"><i class="fas fa-map-marker-alt"></i> Drop-off Locations</a></li>
+                        <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 EcoSort Waste Sorting Guide. All rights reserved.</p>
+                <p>Helping to protect our planet through proper waste disposal</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="item-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-trash-alt"></i> <span id="modal-title">Plastic Bottle</span></h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="item-details">
+                <p id="item-description">Empty and rinse plastic bottles before recycling. Remove caps unless they're the same type of plastic. Most plastic bottles are made from PET (Polyethylene Terephthalate) which is widely recyclable.</p>
+                <p><span class="detail-label">Disposal Method:</span> <span class="disposal-method" id="item-disposal">Place in recycling bin</span></p>
+                <p><span class="detail-label">Preparation:</span> <span id="item-preparation">Rinse and remove caps</span></p>
+                <p><span class="detail-label">Alternatives:</span> <span id="item-alternatives">Consider refilling and reusing when possible. Use a reusable water bottle to reduce plastic waste.</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
