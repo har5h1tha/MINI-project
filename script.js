@@ -1,4 +1,4 @@
-// Waste items database with existing image URLs
+// Waste items database 
 const wasteItems = [
     {
         name: "Plastic Bottle",
@@ -312,4 +312,5 @@ function nextQuizQuestion() {
 }
 
 // Initialize the app when DOM is loaded
+
 document.addEventListener('DOMContentLoaded', init);
